@@ -16,12 +16,12 @@ Crear un "Hola Mundo Visual" donde se muestre un objeto o escena básica y se le
 
 Lista los principales conceptos aplicados:
 
-- [ ] Transformaciones geométricas (escala, rotación, traslación)
-- [ ] Segmentación de imágenes
-- [ ] Shaders y efectos visuales
-- [ ] Entrenamiento de modelos IA
-- [ ] Comunicación por gestos o voz
-- [ ] Otro: _______________________
+- [x] Transformaciones geométricas (escala, rotación, traslación)
+- [x] Matrices de transformación homogéneas
+- [x] Animaciones basadas en tiempo con funciones trigonométricas
+- [x] Programación visual en múltiples entornos
+- [x] Composición de transformaciones matemáticas
+- [x] Renderizado 2D y 3D en tiempo real
 
 ---
 
