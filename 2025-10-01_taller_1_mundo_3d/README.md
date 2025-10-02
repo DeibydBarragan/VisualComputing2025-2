@@ -112,11 +112,11 @@ const concreteShader = {
 
 ### Videos de demostración:
 
-![Video 1](./2025-10-01_taller_1_materiales_iluminacion_color/renders/1.gif)
+![Video 1](./renders/1.gif)
  
-![Video 2](./2025-10-01_taller_1_materiales_iluminacion_color/renders/2.gif)
+![Video 2](./renders/2.gif)
 
-![Video 3](./2025-10-01_taller_1_materiales_iluminacion_color/renders/3.gif)
+![Video 3](./renders/3.gif)
 
 ---
 
