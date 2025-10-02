@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taller: Materiales, Iluminación y Color</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+            background-color: #000;
+        }
+
+        #container {
+            width: 100vw;
+            height: 100vh;
+        }
+
+        #ui {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 100;
+            color: white;
+            background: rgba(0,0,0,0.7);
+            padding: 15px;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        #ui h3 {
+            margin: 0 0 10px 0;
+            color: #4CAF50;
+        }
+
+        .control-group {
+            margin-bottom: 15px;
+        }
+
+        .control-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #fff;
+        }
+
+        .control-group button {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            margin: 2px;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+
+        .control-group button:hover {
+            background: #45a049;
+        }
+
+        .control-group button.active {
+            background: #FFA500;
+        }
+
+        .slider-container {
+            margin: 5px 0;
+        }
+
+        .slider-container input[type="range"] {
+            width: 150px;
+        }
+
+        .color-preset {
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            margin: 2px;
+            cursor: pointer;
+            border: 2px solid #fff;
+        }
+
+        #loading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 18px;
+            z-index: 200;
+        }
+    </style>
+</head>
+<body>
+    <div id="loading">Cargando mundo virtual...</div>
+    
+    <div id="container"></div>
+    
+    <div id="ui">
+        <h3>Controles del Mundo Virtual</h3>
+        
+        <div class="control-group">
+            <label>Cámaras:</label>
+            <button id="perspectiveBtn" class="active">Perspectiva</button>
+            <button id="orthographicBtn">Ortográfica</button>
+        </div>
+
+        <div class="control-group">
+            <label>Presets de Iluminación:</label>
+            <button id="dayLighting" class="active">Día</button>
+            <button id="sunsetLighting">Atardecer</button>
+            <button id="nightLighting">Noche</button>
+        </div>
+
+        <div class="control-group">
+            <label>Materiales:</label>
+            <button id="pbrMaterials" class="active">PBR Realista</button>
+            <button id="proceduralMaterials">Procedurales</button>
+            <button id="mixedMaterials">Mixto</button>
+        </div>
+
+        <div class="control-group">
+            <label>Animaciones:</label>
+            <button id="toggleAnimation">Play/Pause</button>
+            <button id="cameraAnimation">Recorrido Cámara</button>
+        </div>
+
+        <div class="control-group">
+            <label>Paleta de Color:</label>
+            <div>
+                <span class="color-preset" style="background: #FF6B6B" data-color="#FF6B6B"></span>
+                <span class="color-preset" style="background: #4ECDC4" data-color="#4ECDC4"></span>
+                <span class="color-preset" style="background: #45B7D1" data-color="#45B7D1"></span>
+                <span class="color-preset" style="background: #96CEB4" data-color="#96CEB4"></span>
+                <span class="color-preset" style="background: #FFEAA7" data-color="#FFEAA7"></span>
+                <span class="color-preset" style="background: #DDA0DD" data-color="#DDA0DD"></span>
+            </div>
+        </div>
+
+        <div class="control-group">
+            <label>Ajustes PBR:</label>
+            <div class="slider-container">
+                <label>Roughness: <span id="roughnessValue">0.5</span></label>
+                <input type="range" id="roughnessSlider" min="0" max="1" step="0.1" value="0.5">
+            </div>
+            <div class="slider-container">
+                <label>Metalness: <span id="metalnessValue">0.0</span></label>
+                <input type="range" id="metalnessSlider" min="0" max="1" step="0.1" value="0.0">
+            </div>
+        </div>
+    </div>
+
+    <!-- Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <!-- GLTFLoader -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+    <!-- OrbitControls -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    
+    <script src="main.js"></script>
+</body>
+</html>
